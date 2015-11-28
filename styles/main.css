@@ -103,6 +103,12 @@
     color:#82B3AE;
     text-transform: uppercase;
 }
+.versusText{
+    font-family: "Passion";
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+}
 
 
 
@@ -139,4 +145,11 @@
 
 body{
     color:white;
+}
+.votingVS img{
+    width:90%;
+    border-radius: 50%;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
