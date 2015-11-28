@@ -1,7 +1,7 @@
 'use strict';
 
 var myDataRef = new Firebase('https://selfiewar.firebaseio.com/'); //point to firebase
-
+var root = "http://localhost:8000";
 //myDataRef.child('challenge').child("Marcato Hackathon").set({ title: 'Marcato Hackathon', prize: 'A slice of pizza!'});
 
 var name = "";
@@ -18,6 +18,11 @@ if (authData){
 	console.log('user is already logged in');
 
 	myDataRef.child('user').child(userId).set({ id:userId, name:name, image:gravatar });
+console.log(window.location.href);
+if (window.location.href == root + "/#/?") {
+	window.location.href = root + "/#/entry";
+}
+	
 } 
 
 

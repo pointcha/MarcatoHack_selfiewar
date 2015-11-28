@@ -18,20 +18,24 @@ var app = angular
       controller: 'AuthCtrl'
     }) 
     .when('/entry', {
-      templateUrl: 'views/entry.html',  
-      controller: 'ChallengeCtrl'
+      templateUrl: 'views/entry.html',
+      controller: 'AuthCtrl'
     })
     .when('/snap', {
-      templateUrl: 'views/snap.html' 
+      templateUrl: 'views/snap.html',
+      controller: 'AuthCtrl'
     })
     .when('/vote', {
-      templateUrl: 'views/vote.html'
+      templateUrl: 'views/vote.html',
+      controller: 'AuthCtrl'
     })
     .when('/votezoom', {
-      templateUrl: 'views/votezoom.html'  
+      templateUrl: 'views/votezoom.html',
+      controller: 'AuthCtrl'  
     })
     .when('/leader', {
-      templateUrl: 'views/leader.html'  
+      templateUrl: 'views/leader.html',
+      controller: 'AuthCtrl'  
     })
     .otherwise({
       redirectTo: '/'

@@ -1,6 +1,6 @@
 <!-- This is the universal header -->
 <div class="headerLogoText">
-		<img class="logoHeader" src="assets/img/SelfieWarsIcon.png">
+		<img ng-click='logout()' class="logoHeader" src="assets/img/SelfieWarsIcon.png">
 		<p class="logoText">Selfie Wars</p>
 
 </div>
@@ -15,7 +15,7 @@
   <!-- Buttons -->
   <div class="btn-group btn-group-justified" role="group" aria-label="...">
     <div class="btn-group" role="group">
-      <button type="button" class="btn btn-default buttonPost">Post</button>
+      <button onclick="postButton()" type="button" class="btn btn-default buttonPost">Post</button>
     </div>
     <div class="btn-group" role="group">
       <button type="button" class="btn btn-default buttonVote">Vote</button>

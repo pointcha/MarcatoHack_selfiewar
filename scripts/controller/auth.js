@@ -21,5 +21,6 @@ app.controller('AuthCtrl', function ($scope, $location) {
 
 	$scope.logout = function(){
 		myDataRef.unauth();
+		$location.path('/');
 	}
 })
