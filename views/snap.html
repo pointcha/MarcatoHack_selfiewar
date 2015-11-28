@@ -7,12 +7,13 @@
 <!-- Text box with photo button -->
 	<!-- Text Description -->
 <div class="descriptionText"> 
+	<img src="assets/img/placeholder.jpg">
 	<p class="headerText">Instructions</p>
 	<p class="bodyText">Launch your camera app and snap your best SELFIE!</p>
-	<img src="assets/img/placeholder.jpg">
 </div>
 
 	<!-- Camera Button -->
 <div>
-    <button><span><i class="fa fa-camera-retro"></i></span></button>
+		<input id="photoUpload" class="hidden center topPadding" type="file" accept="image/*" capture="camera" onchange="uploadPhoto();"></input>
+    <button for="photoUpload" id="photoButton"><span><i class="fa fa-camera-retro"></i></span></button>
 </div>
