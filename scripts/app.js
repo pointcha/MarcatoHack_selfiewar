@@ -9,12 +9,13 @@ var app = angular
   'toaster'
   ])
 
-  .constant('FURL', 'https://snapwich.firebaseio.com/')
+  .constant('FURL', 'https://selfiewar.firebaseio.com/')
 
   .config(function ($routeProvider) {
     $routeProvider      
     .when('/', {
-      templateUrl: 'views/login.html'
+      templateUrl: 'views/login.html',
+      controller: 'AuthCtrl'
     }) 
     .when('/entry', {
       templateUrl: 'views/entry.html'  
