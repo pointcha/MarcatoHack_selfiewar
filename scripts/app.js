@@ -14,12 +14,12 @@ var app = angular
   .config(function ($routeProvider) {
     $routeProvider      
     .when('/', {
-      templateUrl: 'views/login.html',
-      controller: 'AuthCtrl'
+      templateUrl: 'views/login.html'
+      //controller: 'AuthCtrl'
     }) 
     .when('/entry', {
       templateUrl: 'views/entry.html',  
-      controller: 'ChallengeCtrl,
+      controller: 'ChallengeCtrl'
     })
     .when('/snap', {
       templateUrl: 'views/snap.html' 

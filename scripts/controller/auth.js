@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('AuthCtrl', function ($scope, $location, Auth) {
+app.controller('AuthCtrl', function ($scope, $location) {
 
 
 	$scope.login = function(provider){
