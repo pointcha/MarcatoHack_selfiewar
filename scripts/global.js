@@ -1,52 +1,56 @@
-// 'use strict';
+'use strict';
 
-// var myDataRef = new Firebase('https://selfiewar.firebaseio.com/');
-//   var name = "";
-//   var userId = "";
-//   var userLogged = "";
-//   var userNodeId = "";
-//   var f = "";
-//   console.log(authData);
-//   console.log(name);
-//   console.log(userId);
-//   var authData = myDataRef.getAuth();
+var myDataRef = new Firebase('https://selfiewar.firebaseio.com/'); //point to firebase
 
-//  function login(provider) {
-//    myDataRef.authWithOAuthRedirect(provider, function(error, authData) {
+//myDataRef.child('challenge').child("Marcato Hackathon").set({ title: 'Marcato Hackathon', prize: 'A slice of pizza!'});
 
-//     if (error) {
-//       console.log("login Failed!", error);
-//     } else if (authData){
-//       console.log("Authenticated successfully with payload:", authData);
-//       userId = authData.uid;
-//       name = authData[authData.provider].displayName;
-//       location.reload();
-//       gravatar = authData[authData.provider].profileImageURL;
-//       logged = "yes"
-//       console.log(name);
-//       showName();
-//       authModal.modal('hide');
-//       console.log("User " + userId + " is logged in with " + authData.provider);
+var name = "";
+var userId = "";
+var userNodeId = "";
+var f = "";
+var authModal = $('#auth-modal').modal( {show: false });
+var gravatar = "";
+var authData = myDataRef.getAuth();
+if (authData){
+	userId = authData.uid;
+	name = authData[authData.provider].displayName;
+	gravatar = authData[authData.provider].profileImageURL;
+	console.log('user is already logged in');
 
-//       myDataRef.child('user').child(userId).once("value", function(snapshot) {
-//   var ifExists = snapshot.exists(); //a firebase function
-//   if (ifExists){
-//     console.log('user is already in the system');
-// //setUserNodeId();
-// data = snapshot.val();
-// for (key in data) {
-//   userNodeId = key;
-//   console.log('user node is 1 ' + userNodeId);
-// }
-// if (userNodeId) {
-//   myDataRef.child('user').child(userId).child(userNodeId).update({logged:logged});
-  
-// }
-// } else {
-//   myDataRef.child('user').child(userId).push({id:userId, name:name, image:gravatar, logged:logged});
-//   setUserNodeId();
-// }
-// });
-//     }
-//   });
-// }
+	myDataRef.child('user').child(userId).set({ id:userId, name:name, image:gravatar });
+} 
+
+
+console.log(authData);
+console.log(name);
+console.log(userId);
+
+
+function loginJS(provider) {
+myDataRef.authWithOAuthRedirect(provider, function(error, authData) {
+
+		if (error) {
+			console.log("login Failed!", error);
+		} else if (authData){
+
+
+			console.log("Authenticated successfully with payload:", authData);
+			userId = authData.uid;
+			name = authData[authData.provider].displayName;
+			console.log("User " + userId + " is logged in with " + authData.provider);
+
+			myDataRef.child('user').child(userId).once("value", function(snapshot) {
+
+  		var ifExists = snapshot.exists(); //a firebase function
+  		if (ifExists){
+  			console.log('user is already in the system');
+  			myDataRef.child('user').child(userId).push({id:userId, name:name});
+  		}else {
+  			myDataRef.child('user').child(userId).push({id:userId, name:name});
+  		}
+	  	});
+}
+
+});
+
+}
