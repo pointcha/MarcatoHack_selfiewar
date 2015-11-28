@@ -18,7 +18,8 @@ var app = angular
       controller: 'AuthCtrl'
     }) 
     .when('/entry', {
-      templateUrl: 'views/entry.html'  
+      templateUrl: 'views/entry.html',  
+      controller: 'ChallengeCtrl,
     })
     .when('/snap', {
       templateUrl: 'views/snap.html' 
