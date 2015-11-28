@@ -1,8 +1,8 @@
 'use strict';
 
-app.service('Auth', function($firebaseSimpleLogin, FIREBASE_URL, $rootScope){
+app.service('Auth', function($firebaseSimpleLogin, FURL, $rootScope){
 
-	var FBRef = new Firebase(https://selfiewar.firebaseio.com/)
+	var FBRef = new Firebase(FURL);
 	var auth = null;
 
 	return {

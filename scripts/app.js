@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular
-.module('SelfieWar', [
+.module('Selfiewar', [
   'ngAnimate',    
   'ngResource',
   'ngRoute',    
