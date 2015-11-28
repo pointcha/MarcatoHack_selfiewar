@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Passion";
+    src: url(../assets/fonts/PassionOne-Bold.otf);
+}
+.mainContainer{
+    background-color:#230F2B;
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+.logoLarge{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:25%;
+}
+.mainText{
+    font-family: "Passion";
+    font-size:50px;
+    text-transform: uppercase;
+    text-align: center;
+    color:#82B3AE;
+    margin-top:15%;
+    margin-bottom: 25%;
+}
+.loginSubText{
+    color:#82B3AE;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+#twitter-signin-btn{
+    font-size: 96px;
+    color:#FFF;
+}
+.twitterLogin{
+    text-align: center;
+    font-family: "Passion";
+}
