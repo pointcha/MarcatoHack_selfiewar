@@ -1,6 +1,6 @@
 'use strict';
 
-app.service('Auth', function($firebaseSimpleLogin, FURL, $rootScope){
+app.service('Auth', function(FURL, $rootScope){
 
 	var FBRef = new Firebase(FURL);
 	var auth = null;
@@ -8,19 +8,18 @@ app.service('Auth', function($firebaseSimpleLogin, FURL, $rootScope){
 	return {
 		init: function() {
 			// to be global user object
-			auth = $firebaseSimpleLogin(FBRef);
-        	return auth;
+			//auth = $firebaseSimpleLogin(FBRef);
+        	//return auth;
         },
         getCurrentUser: function(cb){
-            return auth.$getCurrentUser();
+            //return auth.$getCurrentUser();
         },
 		loginWithTwitter: function(cb){
-            auth.$login('twitter').then(function(user){
-                if (cb) cb(null, user)
-            }, cb)
+
+
         },
         logout: function(){
-        	auth.$logout()
+        	//auth.$logout()
         }
     };
 });
