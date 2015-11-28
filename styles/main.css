@@ -2,6 +2,19 @@
     font-family: "Passion";
     src: url(../assets/fonts/PassionOne-Bold.otf);
 }
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(../assets/fonts/RobotoSlab-Regular.ttf);
+}
+@font-face {
+    font-family: "Roboto Slab Light";
+    src: url(../assets/fonts/RobotoSlab-Light.ttf);
+}
+@font-face {
+    font-family: "Roboto Slab Thin";
+    src: url(../assets/fonts/RobotoSlab-Thin.ttf);
+}
+
 .mainContainer{
     background-color:#230F2B;
     position: fixed;
@@ -16,6 +29,17 @@
     margin-right:auto;
     margin-top:25%;
 }
+.logoHeader{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+    width: 18%;
+}
+.headerLogoText{
+    margin-bottom: 10%;
+}
+
 .mainText{
     font-family: "Passion";
     font-size:50px;
@@ -30,6 +54,40 @@
     font-size: 24px;
     text-transform: uppercase;
 }
+.challengeText{
+    color:#230F2B;
+    text-align: center;
+    font-family: "Roboto Slab Light";
+    background-color: #D0CAD3;
+    padding:5%;
+    border-radius: 18px;
+}
+.headerText{
+    font-size:22px;
+    border-bottom: solid black 1px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bodyText{
+    font-size:20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.prizeText{
+    font-family: "Roboto Slab";
+    font-size: 26px;
+}
+.logoText{
+    text-align: center;
+    font-size: 22px;
+    font-family: "Passion";
+    color:#82B3AE;
+    text-transform: uppercase;
+}
+
+
+
 #twitter-signin-btn{
     font-size: 96px;
     color:#FFF;
@@ -37,4 +95,16 @@
 .twitterLogin{
     text-align: center;
     font-family: "Passion";
+}
+.buttonPost{
+    background: #639755;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+    border-radius: 13px;
+    color:white;
+}
+.buttonVote{
+    background: #245563;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+    border-radius: 13px;
+    color:white;
 }
