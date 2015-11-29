@@ -66,12 +66,6 @@ $scope.uploadPhoto = function() {
     }
 }
 
-
-
-
-
-
-
 	function errMessage(err) {
 
 		var msg = "Unknown Error...";

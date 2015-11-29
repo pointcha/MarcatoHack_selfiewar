@@ -46,3 +46,8 @@ myDataRef.child('user').child(userId).once("value", function(snapshot) {
         fileReader.readAsDataURL(fileToLoad);
     }
 }
+
+function pullPhotos() {
+    
+}
+
