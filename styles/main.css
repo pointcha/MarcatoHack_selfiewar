@@ -143,6 +143,25 @@
     margin-top: 5%;
     cursor: pointer;
 }
+.loginButton{
+    background-color: #82B3AE;
+    color:#230F2B;
+    font-family: "Roboto Slab";
+    font-size: 20px;
+    text-align: center;
+    width:40%;
+    margin-left: 4%;
+}
+.registerButton{
+    background-color: coral;
+    color:#230F2B;
+    font-family: "Roboto Slab";
+    font-size: 20px;
+    text-align: center;
+    width:40%;
+    margin-right: 4%;
+}
+
 .snapDiv{
     text-align: center;
 }
@@ -168,4 +187,17 @@ body{
 .container-fluid{
     padding-right: 0;
     padding-left: 0;
+}
+.infoBox{
+    border-radius: 13%;
+    font-family: "Roboto Slab";
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loginForm{
+    margin-top:-8%;
+}
+.registerForm{
+    margin-top:-15%;
 }
