@@ -1,8 +1,7 @@
 'use strict';
 
-function postButton() {
-	window.location.href = root + "/#/snap";
-}
+var myDataRef = new Firebase('https://selfiewar.firebaseio.com/'); //point to firebase
+//myDataRef.child('challenge').child("Marcato Hackathon").set({ title: 'Marcato Hackathon', prize: 'A slice of pizza!'});
 
 function uploadPhoto() {
     var srcData;
@@ -16,18 +15,15 @@ function uploadPhoto() {
         
         fileReader.onload = function(fileLoadedEvent) {
             srcData = fileLoadedEvent.target.result; // <--- data: base64
-            console.log(score + " " + name + " " + userId);
+
             var newImage = document.createElement('img');
             newImage.src = srcData;
 
             if(file){
 
-                myDataRef.child('challenge').child('Marcato Hackathon').child(userId).set({ photo: srcData, score: score,  name: name});
+                myDataRef.child('challenge').child('Marcato Hackathon').child('pics').set({ photo: srcData, score: score,  name: name});
             }
-
         }
         fileReader.readAsDataURL(fileToLoad);
-
     }
-
 }
