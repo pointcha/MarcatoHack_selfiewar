@@ -14,8 +14,20 @@ angular.module('firebaseVotingApp')
 			self.votes = [];
 
 			self.vote = function() {
-				self.votes.push(1);		
-				console.log (votes);		
+				self.votes.push(1);				
 			};
 		};
 });
+
+/**
+ * Controller
+ */
+
+angular.module('firebaseVotingApp')
+  .controller('MainCtrl', function ($scope, Candidate) {
+		$scope.candidates = [
+			new Candidate('Evil Cat'),
+			new Candidate('Mad Elephant'),
+			new Candidate('Cute Puppy')
+		];
+  });
