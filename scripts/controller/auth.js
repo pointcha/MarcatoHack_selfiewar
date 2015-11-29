@@ -4,9 +4,7 @@ var myDataRef = new Firebase('https://selfiewar.firebaseio.com/'); //point to fi
 //myDataRef.child('challenge').child("Marcato Hackathon").set({ title: 'Marcato Hackathon', prize: 'A slice of pizza!'});
 
 	if(Auth.signedIn()) {
-		if(window.location.href = 'http://107.170.108.225/#/login' || 'http://107.170.108.225/#/'){
-			go('/entry');
-		}
+		
 	}
 
 	$scope.register = function(user) {
