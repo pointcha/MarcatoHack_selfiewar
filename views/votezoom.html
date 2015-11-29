@@ -1,6 +1,3 @@
-<div ng-app="firebaseVotingApp">
-<div ng-controller="MainCtrl">
-
 <!-- This is the universal header -->
 <div class="headerLogoText">
 	<img class="logoHeader" src="assets/img/SelfieWarsIcon.png">
@@ -8,18 +5,18 @@
 </div>
 
 <!-- Voting Confirmation Page -->
-	<!-- Error Proofing Vote Choice -->
+<!-- Error Proofing Vote Choice -->
 <div class="votingWinner">
     <label id="1" class="votePhoto"></label>
 	<p class="winnerText">Is this your winner?</p>
 	
-  <!-- Buttons -->
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default fa fa-check chooseWinnerBtn" ng-click="party.vote()">Accept</button>
+<!-- Buttons -->
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default fa fa-check chooseWinnerBtn" ng-click="party.vote()">Accept</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default fa fa-times cancelWinnerBtn">Cancel</button>
+    </div>
   </div>
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default fa fa-times cancelWinnerBtn">Cancel</button>
-  </div>
-</div>
 </div>
