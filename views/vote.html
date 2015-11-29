@@ -11,3 +11,10 @@
 	<div class="versusBox">	<p class="versusText">VS.</p> </div>
 	<img id="1" src="assets/img/placeholder.jpg">
 </div>
+
+<button class="button button-small button-light" ng-click="upThread({{thread.id}})" ng-disabled="upDisabled[thread.id]">  
+  <i class="icon ion-thumbsup"></i>
+</button>
+<button class="button button-small button-light" ng-click="downThread({{thread.id}})" ng-disabled="downDisabled[thread.id]">
+  <i class="icon ion-thumbsdown"></i>
+</button>
