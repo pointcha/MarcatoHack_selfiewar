@@ -29,22 +29,23 @@ console.log(name);
 console.log(userId);
 
 
-function addUser() {
-	   		console.log("Authenticated successfully with payload:", authData);
-			userId = authData.uid;
-			name = authData[authData.provider].displayName;
-			console.log("User " + userId + " is logged in with " + authData.provider);
+myDataRef.onchange = function() {
+function authDataCallback(authData) {
+        if (!authData) {
+            console.log(authData);
+            myDataRef.authWithOAuthRedirect("twitter", function (error) {
+                console.log("Login Failed!", error);
+            });
+        }
+        else {
+            console.log("Authenticated successfully with payload:", authData);
+        }
+    }
+};
 
-			myDataRef.child('user').child(userId).once("value", function(snapshot) {
 
-  		var ifExists = snapshot.exists(); //a firebase function
-  		if (ifExists){
-  			console.log('user is already in the system');
-  			myDataRef.child('user').child(userId).push({id:userId, name:name});
-  		}else {
-  			myDataRef.child('user').child(userId).push({id:userId, name:name});
-  		}
-}
+
+
 // function authDataCallback(authData) {
 //         if (!authData) {
 //             console.log(authData);
