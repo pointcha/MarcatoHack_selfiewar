@@ -16,10 +16,6 @@ var app = angular
     .when('/', {
       templateUrl: 'views/login.html',
       controller: 'AuthCtrl'
-    }) 
-    .when('/email', {
-      templateUrl: 'views/emailLogin.html',
-      controller: 'AuthCtrl'
     })
     .when('/entry', {
       templateUrl: 'views/entry.html',
