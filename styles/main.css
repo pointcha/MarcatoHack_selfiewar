@@ -194,6 +194,32 @@ body{
     text-align: center;
     margin-top: 10%;
 }
+.tablePhoto{
+    border: solid white 2px;
+    padding: 5px;
+    width:20%;
+}
+.tableText{
+    border: solid white 2px;
+    padding: 2px;
+    font-family: "Roboto Slab Light";
+    font-size: 16px;
+    text-align: center;
+    width:30%;
+}
+.leaderBoardTitle{
+    text-align: center;
+    font-family: "Roboto Slab Thin";
+    font-size: 30px;
+    color:white;
+    margin-top: 2%;
+    margin-bottom:2%;
+    text-transform: uppercase;
+}
+
+
+
+
 .container-fluid{
     padding-right: 0;
     padding-left: 0;
@@ -251,6 +277,9 @@ body{
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 
 }
 #0{
