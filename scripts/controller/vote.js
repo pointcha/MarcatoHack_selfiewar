@@ -1,6 +1,10 @@
-app.controller('AuthController', function($scope) {
-  $scope.changeVote = function(vote, flag) {
-    $scope.vote = vote == flag ? 'None' : flag;
-    alert($scope.vote);
-  };
-});
+'use strict';
+
+angular.module('votingApp')
+  .controller('AuthController', function ($scope, Candidate) {
+		$scope.candidates = [
+			new Candidate('Evil Cat'),
+			new Candidate('Mad Elephant'),
+			new Candidate('Cute Puppy')
+		];
+  });

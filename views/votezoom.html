@@ -1,3 +1,5 @@
+<div ng-app="votingApp">
+
 <!-- This is the universal header -->
 <div class="headerLogoText">
 	<img class="logoHeader" src="assets/img/SelfieWarsIcon.png">
@@ -12,7 +14,8 @@
 	<!-- Buttons -->
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default fa fa-check chooseWinnerBtn" ng-click="changeVote(vote, 'up')" ng-class="{true:'up', false:''}[vote=='up']">Accept</button>
+    <button type="button" class="btn btn-default fa fa-check chooseWinnerBtn" ng-click="photo.vote()">Accept</button>
+    <span class="vote-marker" ng-repeat="v in photo.votes track by $index"></span>
   </div>
   <div class="btn-group" role="group">
     <button type="button" class="btn btn-default fa fa-times cancelWinnerBtn">Cancel</button>
