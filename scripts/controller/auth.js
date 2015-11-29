@@ -1,7 +1,7 @@
 app.controller('AuthController', function($scope, $location, toaster, Auth) {
 
 	if(Auth.signedIn()) {
-		$location.path('/entry');
+		//$location.path('/entry');
 	}
 
 	$scope.register = function(user) {
@@ -51,6 +51,11 @@ app.controller('AuthController', function($scope, $location, toaster, Auth) {
 
 		toaster.pop('error', msg);
 	};
+
+// straight navigation redirection
+	$scope.go = function ( path ) {
+  $location.path( path );
+};
 
 
 });
