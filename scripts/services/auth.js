@@ -1,25 +1,65 @@
-// 'use strict';
+'use strict';
 
-// app.service('Auth', function(FURL, $rootScope){
+app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
 
-// 	var FBRef = new Firebase(FURL);
-// 	var auth = null;
+    var ref = new Firebase(FURL);
+    var auth = $firebaseAuth(ref);
 
-// 	return {
-// 		init: function() {
-// 			// to be global user object
-// 			//auth = $firebaseSimpleLogin(FBRef);
-//         	//return auth;
-//         },
-//         getCurrentUser: function(cb){
-//             //return auth.$getCurrentUser();
-//         },
-// 		loginWithTwitter: function(cb){
+    var Auth = {
+        user: {},
+
+        createProfile: function(uid, user) {
+            var profile = {
+                name: user.name,
+                email: user.email
+            };
+
+            var profileRef = $firebase(ref.child('user'));
+            return profileRef.$set(uid, profile);
+        },
+
+        login: function(user) {
+            return auth.$authWithPassword(
+                {email: user.email, password: user.password}
+            );
+        },
+
+        register: function(user) {
+            return auth.$createUser({email: user.email, password: user.password})
+                .then(function() {
+                    // authenticate so we have permission to write to Firebase
+                    return Auth.login(user);
+                })
+                .then(function(data) {
+                    // store user data in Firebase after creating account
+                    return Auth.createProfile(data.uid, user);
+                });
+        },
+
+        logout: function() {
+            auth.$unauth();
+            console.log("you are logged out");
+        },
 
 
-//         },
-//         logout: function(){
-//         	//auth.$logout()
-//         }
-//     };
-// });
+        signedIn: function() {
+            return !!Auth.user.provider; //using !! means (0, undefined, null, etc) = false | otherwise = true
+        }
+    };
+
+    auth.$onAuth(function(authData) {
+        if(authData) {
+            angular.copy(authData, Auth.user);
+            Auth.user.profile = $firebase(ref.child('user').child(authData.uid)).$asObject();
+        } else {
+            if(Auth.user && Auth.user.profile) {
+                Auth.user.profile.$destroy();
+            }
+
+            angular.copy({}, Auth.user);
+        }
+    });
+
+    return Auth;
+
+});
