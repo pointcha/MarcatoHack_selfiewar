@@ -143,6 +143,9 @@
     margin-top: 5%;
     cursor: pointer;
 }
+.snapDiv{
+    text-align: center;
+}
 
 body{
     color:white;
