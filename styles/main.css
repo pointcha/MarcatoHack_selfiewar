@@ -247,6 +247,12 @@ body{
     text-align: center;
     display: inline-block;
 }
+.shrinkPhoto{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+}
 #0{
     margin-top: 5%;
 }
