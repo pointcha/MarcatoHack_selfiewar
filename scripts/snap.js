@@ -73,6 +73,14 @@ console.log(array);
     console.log(challengearray);
     return challengearray;
 
-    // shuffle voteItem array
+    // display item 1 on page
+    console.log(challengearray[0]);
+    var pic0 = challengearray.get(1);
+    var pic1 = challengearray.photo[1];
+
+document["0"].src = pic0.pic.src;
+// display item 1 on page
+
+
 }
 
