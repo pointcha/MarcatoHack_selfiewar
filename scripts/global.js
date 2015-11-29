@@ -6,7 +6,6 @@ var root = "http://localhost:8000";
 
 var name = "";
 var userId = "";
-var userNodeId = "";
 var f = "";
 var authModal = $('#auth-modal').modal( {show: false });
 var gravatar = "";
@@ -25,37 +24,42 @@ if (window.location.href == root + "/#/?") {
 	
 } 
 
-
 console.log(authData);
 console.log(name);
 console.log(userId);
 
 
-function loginJS(provider) {
-myDataRef.authWithOAuthRedirect(provider, function(error, authData) {
 
+
+	// myDataRef.onAuth(function(authData) { 
+
+ //    		console.log("Authenticated successfully with payload:", authData);
+	// 		userId = authData.uid;
+	// 		name = authData[authData.provider].displayName;
+	// 		console.log("User " + userId + " is logged in with " + authData.provider);
+
+	// 		myDataRef.child('user').child(userId).once("value", function(snapshot) {
+
+ //  		var ifExists = snapshot.exists(); //a firebase function
+ //  		if (ifExists){
+ //  			console.log('user is already in the system');
+ //  			myDataRef.child('user').child(userId).push({id:userId, name:name});
+ //  		}else {
+ //  			myDataRef.child('user').child(userId).push({id:userId, name:name});
+ //  		}
+
+ // 	});
+
+
+
+function loginJS(provider) {
+
+myDataRef.authWithOAuthRedirect(provider, function(error) {
 		if (error) {
 			console.log("login Failed!", error);
-		} else if (authData){
+		}
 
-
-			console.log("Authenticated successfully with payload:", authData);
-			userId = authData.uid;
-			name = authData[authData.provider].displayName;
-			console.log("User " + userId + " is logged in with " + authData.provider);
-
-			myDataRef.child('user').child(userId).once("value", function(snapshot) {
-
-  		var ifExists = snapshot.exists(); //a firebase function
-  		if (ifExists){
-  			console.log('user is already in the system');
-  			myDataRef.child('user').child(userId).push({id:userId, name:name});
-  		}else {
-  			myDataRef.child('user').child(userId).push({id:userId, name:name});
-  		}
-	  	});
-}
-
-});
+		window.location.href = root + "/#/entry";
+ 		});
 
 }
