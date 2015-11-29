@@ -29,7 +29,36 @@ console.log(name);
 console.log(userId);
 
 
+myDataRef.onchange = function() {
+function authDataCallback(authData) {
+        if (!authData) {
+            console.log(authData);
+            myDataRef.authWithOAuthRedirect("twitter", function (error) {
+                console.log("Login Failed!", error);
+            });
+        }
+        else {
+            console.log("Authenticated successfully with payload:", authData);
+        }
+    }
+};
 
+
+
+
+// function authDataCallback(authData) {
+//         if (!authData) {
+//             console.log(authData);
+//             myDataRef.authWithOAuthRedirect("twitter", function (error) {
+//                 console.log("Login Failed!", error);
+//             });
+//         }
+//         else {
+//             console.log("Authenticated successfully with payload:", authData);
+//         }
+//     }
+
+// myDataRef.onAuth(authDataCallback);
 
 	// myDataRef.onAuth(function(authData) { 
 
