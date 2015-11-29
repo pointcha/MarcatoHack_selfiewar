@@ -112,6 +112,12 @@
     text-align: center;
     text-transform: uppercase;
 }
+.winnerText{
+    font-family: "Roboto Slab Thin";
+    font-size:24px;
+    margin-top: 10%;
+    margin-bottom:10%;
+}
 
 
 
@@ -182,6 +188,11 @@ body{
 }
 .votingWinner{
     width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    text-align: center;
+    margin-top: 10%;
 }
 .container-fluid{
     padding-right: 0;
@@ -210,6 +221,31 @@ body{
     background-position: center;
     background-size: cover;
     border-radius: 50%;
+}
+.chooseWinnerBtn{
+    width:175px;
+    height:100px;
+    border:solid darkgreen 2px;
+    background-color: green;
+    border-radius: 10px;
+    color:white;
+    margin-right: 10%;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+
+}
+.cancelWinnerBtn{
+    width:175px;
+    height:100px;
+    border:solid darkred 2px;
+    background-color: red;
+    border-radius: 10px;
+    margin-left: 10%;
+    color:white;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
 }
 #0{
     margin-top: 5%;

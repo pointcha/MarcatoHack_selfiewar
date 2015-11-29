@@ -6,16 +6,16 @@
 
 <!-- Voting Confirmation Page -->
 	<!-- Error Proofing Vote Choice -->
-<div class="votingWinner"> 
-	<img id="0" src="assets/img/placeholder.jpg">
+<div class="votingWinner">
+    <label id="1" class="votePhoto"></label>
 	<p class="winnerText">Is this your winner?</p>
 	<!-- Buttons -->
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default fa fa-check" ng-click="upThread({{thread.id}})" ng-disabled="upDisabled[thread.id]">Accept</button>
+    <button type="button" class="btn btn-default fa fa-check chooseWinnerBtn" ng-click="upThread({{thread.id}})" ng-disabled="upDisabled[thread.id]">Accept</button>
   </div>
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default fa fa-times">Cancel</button>
+    <button type="button" class="btn btn-default fa fa-times cancelWinnerBtn">Cancel</button>
   </div>
 </div>
 </div>
