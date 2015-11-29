@@ -148,9 +148,22 @@ body{
     color:white;
 }
 .votingVS img{
-    width:90%;
+    width:80%;
     border-radius: 50%;
     display:block;
     margin-left: auto;
     margin-right: auto;
+    border: solid white 3px;
+}
+.versusBox{
+    width:100%;
+    height: 50px;
+    background-color:#82B3AE;
+    text-align: center;
+    position: absolute;
+    margin-top:-10%;
+}
+.container-fluid{
+    padding-right: 0;
+    padding-left: 0;
 }
