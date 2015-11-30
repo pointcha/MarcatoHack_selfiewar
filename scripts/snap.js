@@ -71,14 +71,16 @@ console.log(array);
     // pull last 2 items into final array
     var challengearray = array.slice(Math.max(array.length - 2, 1))
     console.log(challengearray);
-    return challengearray;
+    //return challengearray;
 
     // display item 1 on page
-    console.log(challengearray[0]);
-    var pic0 = challengearray.get(1);
-    var pic1 = challengearray.photo[1];
+    console.log(challengearray[0].photo);
+    var pic0 = challengearray[0].photo;
+    var pic1 = challengearray[1].photo;
 
-document["0"].src = pic0.pic.src;
+//document.getElementById("#pic0")= pic0.src;
+$("#pic0").css('background-image', 'url(' + pic0 + ')');
+$("#pic1").css('background-image', 'url(' + pic1 + ')');
 // display item 1 on page
 
 
